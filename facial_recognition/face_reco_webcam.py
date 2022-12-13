@@ -36,7 +36,7 @@ for xfile in combine:
 
 video_capture = cv2.VideoCapture(0) # Starter video.
 # Til å få ansiktet fra front
-face_cascade = cv2.CascadeClassifier("archive_ansiktkjennetegn/cascades/data/haarcascade_frontalface_alt2.xml")
+face_cascade = cv2.CascadeClassifier("facial_recognition/cascades/data/haarcascade_frontalface_alt2.xml")
 
 
 # Protocol
@@ -84,7 +84,7 @@ while active: # Neste steg. Kjennetegne på video. Bruk av while True. Framme fo
 
             # print("Top:", top, "Right:", right, "Bottom:", bottom, "Left:", left)
         except ValueError as e:
-            print(e + f": Ingen bilder i {path}")
+            print(f"{e}: Ingen bilder i {path}")
     cv2.imshow("Big Boi", frame)
 
     if cv2.waitKey(1) & 0xFF == ord("d"): # waitKey er sikkert frame per second. Settes på 0, fryser video, 1000 er 1 sek per framme. 1 er den beste jeg kan kjøre FPS kjappere på. For å øke FPS, vet jeg bare å gjøre videoen mindre.

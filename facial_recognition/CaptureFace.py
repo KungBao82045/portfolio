@@ -23,7 +23,7 @@ while active:
 
         filess = os.listdir(path)
 
-        cv2.imwrite(f"faces/{creating}.png", roi_color)
+        cv2.imwrite(f"{path}{creating}.png", roi_color)
         print("Bildet lagret!")
         active = False
     

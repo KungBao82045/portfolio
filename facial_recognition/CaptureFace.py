@@ -8,8 +8,7 @@ if not os.path.exists(path):
     os.mkdir(path)
 
 video_capture = cv2.VideoCapture(0)
-face_cascade = cv2.CascadeClassifier("archive_ansiktkjennetegn/cascades/data/haarcascade_frontalface_alt2.xml")
-
+face_cascade = cv2.CascadeClassifier("facial_recognition/cascades/data/haarcascade_frontalface_alt2.xml")
 while active:
     ret, frame = video_capture.read()
 

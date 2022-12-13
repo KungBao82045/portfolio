@@ -1,29 +1,32 @@
-import numpy as np
 import cv2
+import os
 
-face_cascade = cv2.CascadeClassifier("cascades/data/haarcascade_frontalface_alt2.xml")
+active = True
+path = "faces/"
 
-cap = cv2.VideoCapture(0)
+if not os.path.exists(path):
+    os.mkdir(path)
 
-while(True):
-    ret, frame = cap.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.5, minNeighbors=5)
+video_capture = cv2.VideoCapture(0)
+face_cascade = cv2.CascadeClassifier("archive_ansiktkjennetegn/cascades/data/haarcascade_frontalface_alt2.xml")
+
+while active:
+    ret, frame = video_capture.read()
+
+    faces = face_cascade.detectMultiScale(frame, scaleFactor=1.5, minNeighbors=5)
+
     for (x,y,w,h) in faces:
-        roi_gray = gray[y:y+h, x:x+w]
-        roi_color = frame[y:y+h, x:x+w]
-        img_item = "my-image.png"
-        cv2.imwrite(img_item, roi_gray)
+        print("x: %d\ty: %d\tw: %d\th: %d" % (x,y,w,h))
 
-        color = (255, 0, 0)
-        stroke = 2
-        end_cord_x = x + w
-        end_cord_y = y + h
-        cv2.rectangle(frame, (x,y), (end_cord_x, end_cord_y), color, stroke)
+        print("Lager ny identitet...")
+        roi_color = frame[y:y+h+20, x:x+w+20]
+        creating = input("Skriv inn navn: ")
 
-    cv2.imshow("frame", frame)
-    if cv2.waitKey(20) & 0xFF == ord("q"):
-        break
+        filess = os.listdir(path)
 
-cap.releaase()
-cap.destroyAllWindows()
+        cv2.imwrite(f"faces/{creating}.png", roi_color)
+        print("Bildet lagret!")
+        active = False
+    
+video_capture.release() # Bli ferdig med video fra webcam
+cv2.destroyAllWindows() 

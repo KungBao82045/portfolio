@@ -1,3 +1,5 @@
+# NOTE: This code is not finished. 
+
 import random
 
 health = 100

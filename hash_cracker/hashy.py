@@ -1,3 +1,5 @@
+
+
 class CyberSecurities:
 
     def cyber_security1(self, Red, Cyan, Yellow, White, Green, Purple):
@@ -13,12 +15,12 @@ class CyberSecurities:
         flag = 0
         hash_types = ("MD5", "SHA1", "SHA224", "SHA256", "SHA384", "SHA512")
         
-        hash_enter = str(input(f"\n[*] Select Hash Type({Cyan}MD5{White}, {Red}SHA1{White}, {Yellow}SHA224{White}, SHA256, {Green}SHA384{White}, {Purple}SHA512{White}): ")).upper()
+        hash_enter = str(input(f"\n{White}[{Cyan}*{White}] Select Hash Type({Cyan}MD5{White}, {Red}SHA1{White}, {Yellow}SHA224{White}, SHA256, {Green}SHA384{White}, {Purple}SHA512{White}): ")).upper()
        
         if hash_enter not in hash_types:
             quit(f"[{Cyan}-{White}] Cannot start. Make sure to type the hash properly")
 
-        pass_hash = input(f"\n{White}[{Cyan}*{White}] Enter Hash: ")
+        pass_hash = input(f"\n{White}[{Cyan}*{White}] Enter Your Hash To Crack: ")
 
         if len(pass_hash) != 32 and hash_enter == "MD5":
             print(f"[{Cyan}-{White}]{Red} MD5 must contain 32 letters!{White}")
@@ -44,7 +46,7 @@ class CyberSecurities:
             print(f"[{Cyan}-{White}]{Red} SHA512 must contain 128 letters!{White}")
             quit(0)
 
-        Wordlist = input(f"[{Cyan}*{White}] Enter File Name: ")
+        Wordlist = input(f"[{Cyan}*{White}] Enter File Name To Brute Force: ")
 
         try:
             pass_file = open(Wordlist, "r")
@@ -53,19 +55,10 @@ class CyberSecurities:
 
             quit(f"\n[{Cyan}-{White}]{Red} File Not Found:{White} %s" % Wordlist)
 
-        choice = input(f'[{Cyan}*{White}] (Y/N)Would You Like To Iterate({Yellow}WARNING: Iteration Can Slower The Process{White}): ')
 
-        if choice.lower() == "y" or choice.lower() == "yes":
+        print("\nInitiating! Please Wait While This Script Is Searching For Matching Hash. Go Grab Some Coffee!"); flag = 1; time.sleep(3)
 
-            print("\nIterating! Please Wait While Jacky Is Searching For Matching Hash. Go Grab Some Coffee!"); flag = 1; time.sleep(3)
 
-        elif choice.lower() == 'n' or choice.lower() == "no":
-
-            print("\nInitiating. Please Wait While Jacky Is Searching For Matching Hash. Go Grab Some Coffee!")
-
-        else:
-
-            quit(f'{Red}ERROR: Couldn\'t Initiate The Code. Exiting...')
 
         start = time.perf_counter()
         for word in pass_file:
@@ -97,7 +90,7 @@ class CyberSecurities:
                 print(f"\n    -- MATCHING HASH FOUND -- ")
                 print(f"\n[{Cyan}*{White}] {hash_enter} hash used: " + pass_hash)
                 print(f"[{Cyan}*{White}] Wordlist used: " + Wordlist)
-                print(f"[{Cyan}*{White}] Elapsed TIme: {round(finish-start)} second(s)")
+                print(f"[{Cyan}*{White}] Elapsed Time: {round(finish-start)} second(s)")
                 print(f"\n[{Cyan}!!{White}]{Green} Original String: %s{White}" % word)
                 print(f"{White}------------------------------------------")
                 break
@@ -106,7 +99,7 @@ class CyberSecurities:
             finish = time.perf_counter()
             print("\n------------------------------------------")
             print(f"\n[{Cyan}*{White}] {hash_enter} hash used: {White}%s" % pass_hash)
-            print(f"[{Cyan}*{White}] Elapsed TIme: {round(finish-start)} second(s)")
+            print(f"[{Cyan}*{White}] Elapsed Time: {round(finish-start)} second(s)")
             print(f"[{Cyan}-{White}]{Red} No Hashes Found In {White}%s" % Wordlist)
             print(f"\n{White}------------------------------------------")
 

@@ -6,7 +6,7 @@ class CyberSecurities:
         import hashlib
         import time
 
-        print(f"\n\n\nRunning, {Green}Cyber Security Training NO.1{White}!")
+        print(f"\n\n\nRunning, {Green}Hash Cracker{White}!")
         print(f"Created By{Yellow} Jacky{White}")
         print(f'''\nv1.2 {Cyan}- You can now use other hashes like SHA1, SHA224 ect.
      - Program will no longer give you double warning when you choose to iterate

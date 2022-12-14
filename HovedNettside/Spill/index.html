@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kriminalitet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../SeriousStyle.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://kit.fontawesome.com/64dc836ddf.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="nav">
+        <img class="NameWeb"src="https://cdn.discordapp.com/attachments/678885570268626954/918955954995888148/Shygge.png" width="66px" alt="Bilder av shuriken og shygge navn">
+        <a class="button">
+            <i class="fas fa-bars" class="icon"></i>
+        </a>
+        <div class="Meny">
+            <ul>
+                <li><a href="../index.html"><i class="fas fa-home"></i> Hjem</a></li>
+                <li><a href="../Om_Meg.html"><i class="fas fa-user"></i> Om Meg</a></li>
+                <li><a class="Highlight" href="../Portfolio.html"><i class="fas fa-tools"></i> Portfolio</a></li>
+                <li><a href="../Programmering.html"><i class="fas fa-laptop-code"></i> Programmering</a></li>
+                <li><a href="../Kontakt.html"><i class="fas fa-phone-alt" id="kontakt"></i> Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <div class="Intro">
+        <h1>Velkommen til Kriminalitet!</h1>
+        <p>Du spiller som kriminell som bor i Norge og politi er etter deg. Oppgaven din er å rømme fra Norge. Stjel penger og kjøp flybilett til USA for å vinne spillet. Du taper spillet hvis helset ditt er under 0 eller mislykket tøft kriminalitet. Kjøp førstehjelp for å helbrede deg selv. Førstehjelp gir deg +25</p>    
+    </div>
+
+
+    <div class="status">
+        <h3>Status</h3>
+        <p id="helse"></p>
+        <p id="bank"></p>
+    </div>
+
+
+    <div class="spill">
+        <div id="Enkelt">
+            <h3>Enkelt kriminalitet</h3>
+            <p>Ran en person på gata</p>
+            <p id="E_resultat"></p> <!-- Enkelt resultat -->
+            <button onclick="ranFunction()">Ran</button>
+        </div>
+
+        <br><hr>
+
+        <div id="Farlig">
+            <h3>Tøft kriminalitet</h3>
+            <p>Ran en butikk for eksempel Narvesen, Rema 1000 osv. <br> ADVARSEL: Hvis du mislyktes, game over!</p>
+            <p id="T_resultat"></p>
+            <button onclick="butikkFunction()">Ran</button>
+        </div>
+        
+    </div>
+
+    <div class="Bakgrunn">
+        <h3>Kjøp</h3>
+        <button onclick="heal()">Kjøp førstehjelp (75kr)</button>
+    </div>
+
+    <div class="Bakgrunn">
+        <h3>Flybilett</h3>
+        <button onclick="win()">Kjøp flybilett til USA (1000kr)</button>
+        <h1 id=vinner></h1>
+    </div>
+
+    
+
+
+
+
+<script src="game.js"></script>
+<script src="../kode.js"></script>
+    
+</body>
+</html>

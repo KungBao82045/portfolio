@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+    <h1>Oppgave: Kan du øvelseskjøre</h1>
+    <input type="text" name="" id="alderNumber"> 
+    <label for="checkBoxCar">trafikaltgrunnkurs</label>
+
+    <input type="checkBox" name="" id="checkBoxCar"> 
+    <button onclick="CarTest()">=</button>  
+    <input type="text" name="" disabled="true" id="outputCar">  
+
+
+    <script>
+        function CarTest() {
+            const alderNum = document.getElementById("alderNumber").value;
+            const checkBoxer = document.getElementById("checkBoxCar");
+            let outPuter = document.getElementById("outputCar");
+
+            if ((alderNum >= 16) && (checkBoxer.checked === true)) {
+                console.log("Er minst 16 og har bestått trafikalt grunnkurs. Kan øve å kjøre");
+                outPuter.value = "Kan øve å kjøre";
+
+            } else if (alderNum > 25) {
+                console.log("Over 25 år, trenger ikke trafikaltgrunnkurs og kan kjøre")
+                outPuter.value = "Kan øve å kjøre";
+            } else if ((alderNum >= 16) && (checkBoxer.checked === false)) {
+                outPuter.value = "Kan ikke kjøre";
+                console.log("Kan ikke kjøre. Er minst 16 og har ikke trafikaltgrunnkurs");
+            } else if ((alderNum < 16) && (checkBoxer.checked === true)) {
+                outPuter.value = "Kan ikke kjøre";
+                console.log("Kan ikke kjøre. har trafikaltgrunnkurs, men under 16");
+            } else {
+                console.log("Du er ikke klar for øvelser. Må være minst 16 og har trafikaltgrunnkurs");
+                outPuter.value = "Kan ikke kjøre";
+            }
+        }
+    </script>
+    
+    
+    <h1>Oppgave: Bagasjeovervekt</h1>
+    <!-- Må være minst 2kilo og maks 32 kilo. Hvis bagasjen er mer enn 23 kilo,
+         kommer et gebyr på 130 NOK per kilo -->
+         <input type="text" name="" id="bagasjen">
+         <button onclick="bagKalkulator()">=</button>
+         <input type="text" name="" id="outputBag" disabled=true>
+
+         <script>
+            function bagKalkulator() {
+                const bagasjenKilo = document.getElementById("bagasjen").value;
+                const bagOutput = document.getElementById("outputBag");
+
+                const NOKprKilo = 23;
+                const NOK_total = bagasjenKilo - NOKprKilo;
+
+                if ((bagasjenKilo > NOKprKilo) && (bagasjenKilo > 2) && (bagasjenKilo <= 32)) {
+                    console.log("Over 23kilo. " + bagasjenKilo + "kilo koster", NOK_total * 130);
+                    bagOutput.value = NOK_total * 130 + " NOK";
+                } else if ((bagasjenKilo < NOKprKilo) && (bagasjenKilo > 2) && (bagasjenKilo <= 32)) {
+                    console.log("Trenger ikke å betale så lenge kilo er ikke mer enn 23 kilo. Din kilo er", bagasjenKilo);
+                    bagOutput.value = "0 NOK";
+                } else if (bagasjenKilo <= 2) {
+                    console.log("Du kan ikke ha under 2 kilo")
+                    bagOutput.value = "Ikke ha under 2 kilo";
+                } else if (bagasjenKilo > 32) {
+                    console.log("Du kan ikke ha mer enn 32 kilo")
+                    bagOutput.value = "Ikke ha over 32 kilo";
+                } else {
+                    console.log("UGYLDIG BAGASJE") // Hvis input inneholder tekst
+                    bagOutput.value = "UGYLDIG BAGASJE";
+                }
+            }
+         </script>
+
+         <h1>Oppgave: Kompass</h1>
+         <!-- Kompassgrad er fra 0 til 360 grader.  -->
+<!-- Når vi runder av til en retning tar vi retningen (feks 90 grader for øst) pluss/minus 45 grader. Da får vi: -->
+         <!-- Om graden er mellom 45 og 135 grader, sier vi at vi peker mot øst -->
+         <!-- Om graden er mellom 135 og 225 grader, peker vi mot sør. -->
+         <!-- Om grader er 225 og 315 grader peker vi mot vest. -->
+         <!-- Om grader er større enn 315 eller mindre enn 45, peker vi mot nord. -->
+
+         
+    </body>
+</html>

@@ -37,7 +37,7 @@ for xfile in combine:
 
 video_capture = cv2.VideoCapture(0) # Starter video.
 # Til å få ansiktet fra front
-face_cascade = cv2.CascadeClassifier("facial_recognition/cascades/data/haarcascade_frontalface_alt2.xml")
+face_cascade = cv2.CascadeClassifier("cascades/data/haarcascade_frontalface_alt2.xml")
 
 
 # Protocol

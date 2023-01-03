@@ -23,4 +23,4 @@ Just in case you have missing modules. I recommend to run this on VSCode.
   2. source venv/bin/activate
   3. Do the pip install in (1)
 
-OBS: Make sure to run face recognition python files exactly in the folder you are running. Otherwise, it will not work.
+OBS: Make sure to run face recognition python files exactly in the folder. Otherwise, it will not work.

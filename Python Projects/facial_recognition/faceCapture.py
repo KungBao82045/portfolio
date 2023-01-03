@@ -20,12 +20,12 @@ while active:
 
         print("Lager ny identitet...")
         roi_color = frame[y:y+h+20, x:x+w+20]
-        creating = input("Skriv inn navn: ")
+        creating = input("Input your name: ")
 
         filess = os.listdir(path)
 
         cv2.imwrite(f"faces/{creating}.png", roi_color)
-        print("Bildet lagret!")
+        print("Image saved!")
         active = False
     
 video_capture.release() # Bli ferdig med video fra webcam

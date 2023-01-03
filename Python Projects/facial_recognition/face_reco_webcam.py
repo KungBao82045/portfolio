@@ -1,19 +1,24 @@
 # Tutorials: https://www.youtube.com/watch?v=lC_y8wD7F3Y&t=173s&ab_channel=BrunoCenteno
-# Modifisert av Jacky Cao
+# Modified by Jacky Cao
 
 import numpy as np
 import face_recognition as fr
 import cv2
 import os
 
+active = True
 path = "faces/"
+
+
 if not os.path.exists(path):
     os.mkdir(path)
-    print(f"Legg til bilder i '{path}' mappe for at koden skal funke.")
+    print(f"Add images to '{path}' folder for the code to work. Run 'faceCapture.py' to capture your face.")
+    active = False
 
 
 elif not os.listdir(path):
-    print(f"'{path}' mappe er tomt. Legg til bilder i mappen for at koden skal funke.")
+    print(f"'{path}' folder is empty. Add images to the folder for the code to work. Run 'faceCapture.py' to capture your face.")
+    active = False
 
 
 files1 = os.listdir(path)
@@ -40,8 +45,6 @@ video_capture = cv2.VideoCapture(0) # Starter video.
 face_cascade = cv2.CascadeClassifier("cascades/data/haarcascade_frontalface_alt2.xml")
 
 
-# Protocol
-active = True
 
 while active: # Neste steg. Kjennetegne på video. Bruk av while True. Framme for framme
     ret, frame = video_capture.read() # ret betyr boolean og returnerer true hvis frame er tilgjengelig. (Lurer på hvorfor den brukes ikke. Bør undersøke på internett) : frame is an image array vector captured based on the default frames per second defined explicitly or implicitly

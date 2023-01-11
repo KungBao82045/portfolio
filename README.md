@@ -1,11 +1,3 @@
-# portfolio
-
-This is my first made portfolio from Bjørnholt VG1.
-Here, you can find all my VG1 school projects. And a bit from my own projects too.
-
-You can also learn about me. 
-
----------------------------------------------------------------------------------
 
 # Face Recognition
 
@@ -23,3 +15,4 @@ Just in case you have missing modules. I recommend to run this on VSCode.
   2. source venv/bin/activate
   3. Do the pip install in (1)
 
+OBS: Make sure to run face recognition python files exactly in the folder. Otherwise, it will not work.

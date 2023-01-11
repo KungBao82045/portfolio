@@ -15,4 +15,4 @@ Just in case you have some missing modules.
   2. source venv/bin/activate
   3. Do the pip install in (1)
 
-OBS: Make sure to run face recognition python files exactly in the folder. Otherwise, it will not work.
+OBS: Make sure to run face recognition python files exactly in the folder you are in. Dont run the fil from folder to folder. Otherwise, it will not work.

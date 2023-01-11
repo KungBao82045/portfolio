@@ -1,7 +1,7 @@
 
 # Face Recognition
 
-Just in case you have missing modules. I recommend to run this on VSCode.
+Just in case you have some missing modules.
 
 (1) Install modules:
 

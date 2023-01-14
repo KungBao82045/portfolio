@@ -16,3 +16,5 @@ Just in case you have some missing modules.
   3. Do the pip install in (1)
 
 OBS: Make sure to run face recognition python files exactly in the folder you are in. Dont run the python file from folder to folder. Otherwise, it will not work.
+
+Source for haarcascades: https://github.com/codingforentrepreneurs/OpenCV-Python-Series/tree/master/src/cascades/data

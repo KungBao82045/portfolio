@@ -1,5 +1,5 @@
 # Tutorials: https://www.youtube.com/watch?v=lC_y8wD7F3Y&t=173s&ab_channel=BrunoCenteno
-# Modified by Jacky Cao
+# Made by Jacky Cao
 
 import numpy as np
 import face_recognition as fr

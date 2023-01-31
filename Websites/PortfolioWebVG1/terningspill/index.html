@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../SeriousStyle.css">
+        <link type="text/css" rel="stylesheet" href="stil.css">
+        <script src="https://kit.fontawesome.com/64dc836ddf.js" crossorigin="anonymous"></script>
+        <style>
+            nav {
+                position:relative
+            }
+
+        </style>
+        
+        <title>Terningspill</title>
+    </head>
+
+    <body>
+        <nav class="nav">
+            <img class="NameWeb"src="https://cdn.discordapp.com/attachments/678885570268626954/918955954995888148/Shygge.png" width="66px" alt="Bilder av shuriken og shygge navn">
+            <a class="button">
+                <i class="fas fa-bars" class="icon"></i>
+            </a>
+            <div class="Meny">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Hjem</a></li>
+                    <li><a href="../Om_Meg.html"><i class="fas fa-user"></i> Om Meg</a></li>
+                    <li><a class="Highlight" href="../Portfolio.html"><i class="fas fa-tools"></i> Portfolio</a></li>
+                    <li><a href="../Programmering.html"><i class="fas fa-laptop-code"></i> Programmering</a></li>
+                    <li><a href="../Kontakt.html"><i class="fas fa-phone-alt" id="kontakt"></i> Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        
+        <div class="wrapper clearfix">
+            <!--Spiller 1-->
+            <div class="spiller-0-panel aktiv">
+                <div class="spiller-navn" id="navn-0">Spiller 1</div>
+                <div class="spiller-poeng" id="poeng-0">33</div>
+                <div class="spiller-sum-box">
+                    <div class="spiller-sum-label">Poengsum</div>
+                    <div class="spiller-sum-poeng" id="sum-0">11</div>
+                </div>
+            </div>
+            <!--Spiller 2-->
+            <div class="spiller-1-panel">
+                <div class="spiller-navn" id="navn-1">Spiller 2</div>
+                <div class="spiller-poeng" id="poeng-1">66</div>
+                <div class="spiller-sum-box">
+                    <div class="spiller-sum-label">Poengsum</div>
+                    <div class="spiller-sum-poeng" id="sum-1">22</div>
+                </div>
+            </div>
+           
+            <!--Knapper-->
+            <button class="btn-ny"><i class="ion-ios-plus-outline" id="i"></i>Nytt spill</button>
+            <button class="btn-kast"><i class="ion-ios-loop" id="i"></i>Kast terning</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline" id="i"></i>Hold</button>
+            <p id="mål"></p>
+            
+            
+            <!--Terning-->
+            <img src="img/terning-3.png" alt="Terning" class="terning" id="terning">
+        </div>
+        
+        <script src="spill.js"></script>
+        <script src="../kode.js"></script>
+    </body>
+</html>

@@ -67,7 +67,7 @@ while active: # Neste steg. Kjennetegne på video. Bruk av while True. Framme fo
         
 
         match = fr.compare_faces(kjent_ansikt_encode, ansikt_encoding) # Analysere ansikt. Sammenligne hvis koden kjenner musk eller meg eller hvilken ansikt (kjent_ansikt_encode)
-        navn = "Ukjent"
+        navn = "Unknown"
 
         face_distance = fr.face_distance(kjent_ansikt_encode, ansikt_encoding) # Sammenligne mellom analysert ansikt - normal ansikt
 

@@ -1,4 +1,4 @@
-***How does my face recognition worked***
+***How does my face recognition work?***
 
 This is Python code I made: ***face_reco_webcam.py***
 It is made to analyze and recognize faces to people if their face image is in the "faces/" foldier (You need to create the folder by yourself). If your face is not inside the "faces/" folder, you will be displayed as "Unknown" under the green recognizer box of the screen.

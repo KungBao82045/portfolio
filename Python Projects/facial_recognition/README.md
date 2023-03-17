@@ -7,6 +7,14 @@ In addition, I added comments that explain that they do.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 OBS: Make sure to run face_reco_webcam.py in face_recognition folder. Otherwise, it will not work.
 
-OPTIONAL: If you want to capture your face from ***faceCapture.py*** and save it to the "faces" folder, get the Cascades from GitHub and place the cascades/data/ folder in portfolio/Python Projects/facial_recognition/ 
+OPTIONAL: If you want to capture your face from ***faceCapture.py*** and save it to the "faces" folder, get the Cascades from GitHub and 
+
+place 
+
+cascades/data/ folder
+
+in 
+
+portfolio/Python Projects/facial_recognition/ 
 
 https://github.com/codingforentrepreneurs/OpenCV-Python-Series/tree/master/src/cascades/data

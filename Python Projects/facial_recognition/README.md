@@ -1,13 +1,10 @@
 ***How does my face recognition work?***
 
-This is Python code I made: ***face_reco_webcam.py***
-It is made to analyze and recognize faces to people if their face image is in the "faces/" foldier (You need to create the folder by yourself). If your face is not inside the "faces/" folder, you will be displayed as "Unknown" under the green recognizer box of the screen.
+This is Python code I made: ***face_reco_webcam.py*** that detects and recognise faces from "faces/" folder. If your face is not inside the "faces/" folder, you will be displayed as "Unknown" under the green recognizer box of the screen. To use this script, create "faces" directory in the same folder as ***face_reco_webcam.py*** and add faces there. The face image should format like this: your_name_example.png
 
-In order to display your name, your face image should be named like this: "your_name_example.png".
+In addition, I added comments that explain that they do.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+OBS: Make sure to run face_reco_webcam.py in face_recognition folder. Otherwise, it will not work.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-OBS: Make sure to run face recognition python files exactly in the folder you are in. Dont run the python file from folder to folder. Otherwise, it will not work.
-
-OBS: If you want to use ***faceCapture.py***, you will need to get the Cascades from GitHub and place the ***cascades/data/*** folder in ***portfolio/Python Projects/facial_recognition/*** https://github.com/codingforentrepreneurs/OpenCV-Python-Series/tree/master/src/cascades/data
-This will allow you to capture your face and saved inside the "faces/" folder.
+OPTIONAL: If you want to capture your face from ***faceCapture.py*** and save it to the "faces" folder, get the Cascades from GitHub and place the cascades/data/ folder in portfolio/Python Projects/facial_recognition/ https://github.com/codingforentrepreneurs/OpenCV-Python-Series/tree/master/src/cascades/data

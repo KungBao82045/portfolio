@@ -1,100 +1,90 @@
-# Tutorials: https://www.youtube.com/watch?v=lC_y8wD7F3Y&t=173s&ab_channel=BrunoCenteno
-# Made by Jacky Cao
+# Laget av Jacky Cao
 
 import numpy as np
 import face_recognition as fr
 import cv2
 import os
 
-active = True
+
+
+
 path = "faces/"
-
-
-if not os.path.exists(path):
+if not os.path.exists(path): # If 'faces/' does not exist
     os.mkdir(path)
-    print(f"Add images to '{path}' folder for the code to work. Run 'faceCapture.py' to capture your face.")
-    active = False
+    print(f"Place the image in '{path}' folder for the code to work.")
 
 
-elif not os.listdir(path):
-    print(f"'{path}' folder is empty. Add images to the folder for the code to work. Run 'faceCapture.py' to capture your face.")
-    active = False
+elif not os.listdir(path):   # If no content in 'faces/' folder
+    print(f"'{path}' folder is empty. Place the image in the folder for the code to work.")
 
 
-files1 = os.listdir(path)
-load_imgs = np.array([], ndmin=1)
-load_imgs1 = np.array(files1)
-combine = np.concatenate((load_imgs, load_imgs1))
+list_of_files = os.listdir(path) # Innhold i "faces/"
+
+
 
 if os.path.exists(f"{path}.DS_Store"): os.remove(f"{path}.DS_Store")
 
-kjent_ansikt_encode = [] # Rekkefølge er viktig. Ellers så viser navnet feil på kamera
-kjent_ansikt_navn = []
+known_faces_encode = [] # Order is important. Otherwise, your name will display wrong.
+known_faces_names = []
 
-for xfile in combine:
-    name, type = os.path.splitext(xfile)
+for xfile in list_of_files:
+    name, type = os.path.splitext(xfile) # name on file and what filetype
 
-    alle_bilder = fr.load_image_file(f"{path}{xfile}")
-    alle_ansiktsencode = fr.face_encodings(alle_bilder)[0]
+    all_images = fr.load_image_file(f"{path}{xfile}")     # Load image from faces/example.png
+    all_faces_encode = fr.face_encodings(all_images)[0] # Analyze face. Size of mouth, distance between eyes, etc.
 
-    kjent_ansikt_encode.append(alle_ansiktsencode) 
-    kjent_ansikt_navn.append(name)   
+    known_faces_encode.append(all_faces_encode)  # After analysis, add into known_faces_encode
+    known_faces_names.append(name) # And names. So that the code can display name if recognized.
 
-video_capture = cv2.VideoCapture(0) # Starter video.
-# Til å få ansiktet fra front
-face_cascade = cv2.CascadeClassifier("cascades/data/haarcascade_frontalface_alt2.xml")
+video_capture = cv2.VideoCapture(0) # Start video.
 
 
-
-while active: # Neste steg. Kjennetegne på video. Bruk av while True. Framme for framme
-    ret, frame = video_capture.read() # ret betyr boolean og returnerer true hvis frame er tilgjengelig. (Lurer på hvorfor den brukes ikke. Bør undersøke på internett) : frame is an image array vector captured based on the default frames per second defined explicitly or implicitly
-    small_frame = cv2.resize(frame, (0,0), fx=0.25, fy=0.25) # Endre størrelse på framme
-    rgb_frame = small_frame[:, :, ::-1] # Fanger RGB på frammen. Printer ut RGB.
+while True: # Using while loop to display frame as long its true
+    ret, frame = video_capture.read() # ret means boolean and returns true if frame is available. (Wonder why it is not used. Should research on the internet): frame is an image array vector captured based on the default frames per second. Vector represent list of values in one dimension.
+    small_frame = cv2.resize(frame, (0,0), fx=0.25, fy=0.25) # Change size of the frame
     #print(frame)
 
-    ansikt_locations = fr.face_locations(rgb_frame) # Finner hvor er ansikt i framme. Kan være flere ansikter.
-    ansikt_encoding = fr.face_encodings(rgb_frame, ansikt_locations) # tar ramme fra kamera og sjekker fargen. Liksom hvor er ansiktet.
+    face_locations = fr.face_locations(small_frame) # Locate faces. 
+    faces_encoding = fr.face_encodings(small_frame, face_locations) # takes a frame from the camera and checks the color. Like where is the face.
 
-    for (top, right, bottom, left), ansikt_encoding in zip(ansikt_locations, ansikt_encoding): # Location lager array for top right bottom og left. Encoding iterates top, right osv.
+    for (top, right, bottom, left), faces_encoding in zip(face_locations, faces_encoding): # Location creates array for top right bottom and left. Encoding iterates top, right, bottom and left. 
         
         top *= 4
         right *= 4
         bottom *= 4
         left *= 4
-
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = face_cascade.detectMultiScale(gray, scaleFactor=1.5, minNeighbors=5)
         
 
-        match = fr.compare_faces(kjent_ansikt_encode, ansikt_encoding) # Analysere ansikt. Sammenligne hvis koden kjenner musk eller meg eller hvilken ansikt (kjent_ansikt_encode)
-        navn = "Unknown"
+        match = fr.compare_faces(known_faces_encode, faces_encoding) # Analyze face. Compare if the code knows elon musk or me or which face (known_faces_encode)
+        name = "Unknown"
 
-        face_distance = fr.face_distance(kjent_ansikt_encode, ansikt_encoding) # Sammenligne mellom analysert ansikt - normal ansikt
+        face_distance = fr.face_distance(known_faces_encode, faces_encoding) # Compare between analyzed face - normal face
 
         try:  
-            best_match_index = np.argmin(face_distance) # Hvis koden kjenner ansikt, print ut spesifikk index. # np.argmin returnerer smallest mulig verdi
+            best_match_index = np.argmin(face_distance) # Given np.argmin, return closest match between analyzed face and your face on screen. 
 
 
             if match[best_match_index]:
-                navn = kjent_ansikt_navn[best_match_index] # Hvis true, viser det "Elon Musk" eller hva du endrer på linje 11.
+                name = known_faces_names[best_match_index] # If true, then display the name for example "Elon Musk" 
 
             # Lage rektangel
 
-            cv2.rectangle(frame, (left, top), (right, bottom), (0, 100, 0), 2) # frame for bildet, mest betyr størrelse på rektangel, farge og tykkhet av rektangel.
+            cv2.rectangle(frame, (left, top), (right, bottom), (0, 100, 0), 2) # Creates rectangle to fit your face on screen.
 
-            cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 100, 0), cv2.FILLED) # Lag rektangel under.
-            font = cv2.FONT_HERSHEY_SIMPLEX # Velg hvilken font det skal se ut.
-            cv2.putText(frame, navn, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 2) # Plassering av navn, farger, tykkhet og størrelsen.
+            cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 100, 0), cv2.FILLED) # Creates recktangle under for names.
+            font = cv2.FONT_HERSHEY_SIMPLEX # You can choose which font style you want.
+            cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 2) # Placing name, color, thickness and font size.
 
             # print("Top:", top, "Right:", right, "Bottom:", bottom, "Left:", left)
         except ValueError as e:
-            print(e + f": Ingen bilder i {path}")
-    cv2.imshow("Big Boi", frame)
+            print(e + f": No images in {path}")
 
-    if cv2.waitKey(1) & 0xFF == ord("d"): # waitKey er sikkert frame per second. Settes på 0, fryser video, 1000 er 1 sek per framme. 1 er den beste jeg kan kjøre FPS kjappere på. For å øke FPS, vet jeg bare å gjøre videoen mindre.
+    cv2.imshow("Press D to quit", frame) # Display frame with the name o: Press D to quit
+
+    if cv2.waitKey(1) & 0xFF == ord("d"): # waitKey is probably frame per second. If you set it to 0, freezes the video, 1000 is 1 sec per frame.
         break
 
 
-video_capture.release() # Bli ferdig med video fra webcam
-cv2.destroyAllWindows() 
+video_capture.release() # Finish video from webcam
+cv2.destroyAllWindows()
 

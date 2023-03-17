@@ -17,7 +17,7 @@ Just in case you have some missing modules.
 
 (2) Create "faces" directory in the same folder as ***face_reco_webcam.py***
 
-OBS: Make sure to run face recognition python files exactly in the folder you are in. Dont run the python file from folder to folder. Otherwise, it will not work.
+OBS: Make sure to run ***face_reco_webcam.py*** in ***face_recognition*** folder. Otherwise, it will not work.
 
-Get the Cascades from GitHub and place the ***cascades/data/*** folder in ***portfolio/Python Projects/facial_recognition/***
+OPTIONAL: If you want to capture your face from the program and save it into "faces" folder, get the Cascades from GitHub and place the ***cascades/data/*** folder in ***portfolio/Python Projects/facial_recognition/***
 https://github.com/codingforentrepreneurs/OpenCV-Python-Series/tree/master/src/cascades/data

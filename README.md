@@ -15,7 +15,7 @@ Just in case you have some missing modules.
   2. source venv/bin/activate
   3. Do the pip install in (1.1)
 
-(2) Create "faces/" directory and place it with ***face_reco_webcam.py***
+(2) Create "faces" directory in the same folder as ***face_reco_webcam.py***
 
 OBS: Make sure to run face recognition python files exactly in the folder you are in. Dont run the python file from folder to folder. Otherwise, it will not work.
 

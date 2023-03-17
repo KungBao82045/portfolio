@@ -1,6 +1,6 @@
 ***How does my face recognition work?***
 
-This is Python code I made: ***face_reco_webcam.py*** that detects and recognise faces from "faces/" folder. If your face is not inside the "faces/" folder, you will be displayed as "Unknown" under the green recognizer box of the screen. To use this script, create "faces" directory in the same folder as ***face_reco_webcam.py*** and add faces there. The face image should format like this: your_name_example.png
+This is Python code I made: ***face_reco_webcam.py*** that detects and recognise faces from "faces" folder. If your face is not inside the "faces" folder, you will be displayed as "Unknown" under the green recognizer box of the screen. To use this script, create "faces" directory in the same folder as ***face_reco_webcam.py*** and add faces there. The face image should format like this: your_name_example.png
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------

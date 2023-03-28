@@ -30,8 +30,8 @@ OPTIONAL: You can use ***faceCapture.py*** to capture you face and save it to th
 
 After you have downloaded the cascade, place
 
-cascades/data/ folder
+***cascades/data/*** folder
 
 in 
 
-portfolio/Python Projects/facial_recognition/ 
+***portfolio/Python Projects/facial_recognition/ ***

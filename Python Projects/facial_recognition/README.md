@@ -19,7 +19,7 @@
 
 6. Run the script. It will display green box around any faces it recognizes and names under the box. If a person's face is not inside the ***faces*** folder, it will display as "Unknown" under the box.
 
-IMPORTANT: Make sure to run ***face_reco_webcam.py from face_recognition folder. If you run it from different folder, it may not work.
+IMPORTANT: Make sure to run ***face_reco_webcam.py*** from face_recognition folder. If you run it from different folder, it may not work.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 

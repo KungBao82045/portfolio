@@ -5,18 +5,22 @@
 
 2. Navigate the folder to ***Python Projects > facial_recognition***
 
-2.1 Just in case you have some missing modules. Install these libraries:
-      pip3 install numpy
-      pip3 install face_recognition
-      pip3 install opencv-python
+3 Just in case you have some missing modules. Install these libraries inside ***facial_recognition*** folder:
+      <ul>
+      <li>pip3 install numpy</li>
+      <li>pip3 install face_recognition</li>
+      <li>pip3 install opencv-python</li>
+      </ul>
 
-3. The file you are using for facial recognition is ***face_reco_webcam.py***
+      
+
+4. The file you are using for facial recognition is ***face_reco_webcam.py***
    Before running this file, create a folder named ***faces***
    
-4. Inside the ***faces*** folder you just created, add images of person's face. It should format like this ***your_name_example.png***
+5. Inside the ***faces*** folder you just created, add images of person's face. It should format like this ***your_name_example.png***
    Replace ***your_name_example*** with your name and save it as a PNG file.
 
-5. Run the script. It will display green box around any faces it recognizes and names under the box. If a person's face is not inside the ***faces***          folder, it will display as "Unknown" under the box.
+6. Run the script. It will display green box around any faces it recognizes and names under the box. If a person's face is not inside the ***faces***          folder, it will display as "Unknown" under the box.
 
 IMPORTANT: Make sure to run ***face_reco_webcam.py from face_recognition folder. If you run it from different folder, it may not work.
 

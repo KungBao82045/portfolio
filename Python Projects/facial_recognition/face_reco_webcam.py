@@ -1,3 +1,5 @@
+
+
 import numpy as np
 import face_recognition as fr
 import cv2
@@ -7,10 +9,8 @@ import os
 
 
 path = "faces/"
+active = True
 
-if not os.path.exists(path) or not os.listdir(path): # If 'faces/' does not exist
-    print(f"'{path}' folder is empty. Place the image in the folder for the code to work.")
-    exit()
 
 
 list_of_files = os.listdir(path) # Innhold i "faces/"
@@ -35,7 +35,7 @@ for xfile in list_of_files:
 video_capture = cv2.VideoCapture(0) # Start video.
 
 
-while True: # Using while loop to display frame as long its true
+while active: # Using while loop to display frame as long its true
     ret, frame = video_capture.read() # ret means boolean and returns true if frame is available. (Wonder why it is not used. Should research on the internet): frame is an image array vector captured based on the default frames per second. Vector represent list of values in one dimension.
     small_frame = cv2.resize(frame, (0,0), fx=0.25, fy=0.25) # Change size of the frame
 
@@ -63,7 +63,7 @@ while True: # Using while loop to display frame as long its true
             if match[best_match_index]:
                 name = known_faces_names[best_match_index] # If true, then display the name for example "Elon Musk" 
 
-          #  print(match, best_match_index, name, "\t", f"L: {left} R: {right} T: {top} B: {bottom}\t")
+            print(match, best_match_index, name, "\t", f"L: {left} R: {right} T: {top} B: {bottom}\t")
 
             # Lage rektangel
 
@@ -75,7 +75,8 @@ while True: # Using while loop to display frame as long its true
 
             # print("Top:", top, "Right:", right, "Bottom:", bottom, "Left:", left)
         except ValueError as e:
-            print(e + f": No images in {path}")
+            print(f"\nValueError: {e}\nNo images in {path}")
+            active = False
 
     cv2.imshow("Press D to quit", frame) # Display frame with the name: Press D to quit
 

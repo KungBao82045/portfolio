@@ -77,7 +77,7 @@ while True: # Using while loop to display frame as long its true
         except ValueError as e:
             print(e + f": No images in {path}")
 
-    cv2.imshow("Press D to quit", frame) # Display frame with the name o: Press D to quit
+    cv2.imshow("Press D to quit", frame) # Display frame with the name: Press D to quit
 
     if cv2.waitKey(1) & 0xFF == ord("d"): # waitKey is probably frame per second. If you set it to 0, freezes the video, 1000 is 1 sec per frame.
         break

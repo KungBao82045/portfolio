@@ -1,4 +1,16 @@
-<h1>How to use face recognition (step-by-step)</h1>
+<h1>FAQ</h1>
+
+Q: I got IndexError: list index out of range. 
+A: There must be an image does not contain faces or the faces is too inaccurate. Find it in ***faces*** folder and delete it by right clicking it and click delete.
+
+Q: This script doesn't recognize me
+A: Make sure your face image is accurate enough. High quality, good angle increase the chance to recognize you.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<h2>How to use face recognition (step-by-step)</h2>
 
 1. Download or clone my project: https://github.com/KungBao82045/portfolio.git
 

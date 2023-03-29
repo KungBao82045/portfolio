@@ -1,7 +1,7 @@
 <h1>FAQ</h1>
 
 <p>Q: I got IndexError: list index out of range.</p>
-<p>A: There must be an image does not contain faces or the faces is too inaccurate. Find it in ***faces*** folder and delete it by right clicking it and click delete.</p><br>
+<p>A: There must be an image does not contain faces or the faces is too inaccurate. Find it in 'faces' folder and delete it by right clicking it and click delete.</p><br>
 
 <p>Q: This script doesn't recognize me</p>
 <p>A: Make sure your face image is accurate enough. High quality, good angle increase the chance to recognize you.</p>

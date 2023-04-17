@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GPT website</title>
+        <style>
+            body {
+                background-image: url("");
+                background-color: black;
+            }
+            .main {
+                margin: 50px;
+                padding: 50px;
+                background-color: lightgreen;
+            }
+            .user_response {
+                background-color: lightcoral;
+                padding: 50px;
+            }
+            .chatbot_response {
+                background-color: lightblue;
+                padding: 50px;
+            }
+            h1, p, button, input, label {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <h1>You Are Talking To ShadowBOT</h1>
+            <div class="user_response">
+                <form method="post">                                         <!-- Kaller method="post" for at views.py henter input fra nettsiden -->
+                    {% csrf_token %}                                         <!-- Security token when sending API -->
+                    <label for="user_input">Enter your input:</label>        
+                    <input type="text" id="user_input" name="user_input">    <!-- her har jeg definert id for at django views.py kan få hente input -->
+                    <button type="submit">Submit</button>                    <!-- Sender input til views.py -->
+                </form>
+            </div>
+
+            <br>
+
+            <div class="chatbot_response">           
+                <p>You typed: {{ user_input }}</p>   <!-- Hva du har skrevet -->
+                <p>ShadowBOT: {{ reply_user }}</p>   <!-- Hva AI svarer -->
+            </div>
+
+        </div>
+        
+    </body>
+</html>
+
+

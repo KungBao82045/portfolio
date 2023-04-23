@@ -41,4 +41,4 @@ After you have downloaded the cascade, place
 
 in 
 
-`portfolio/Python Projects/facial_recognition/
+`portfolio/Python Projects/facial_recognition/`

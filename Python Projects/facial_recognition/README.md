@@ -18,8 +18,10 @@
 
 3. Just in case you have some missing modules. Install these libraries:
 `pip3 install numpy`
+<br>
 `pip3 install face_recognition`
-`pip3 install opencv-python
+<br>
+`pip3 install opencv-python`
       
 
 4. The file you are using for facial recognition is ***face_reco_webcam.py*** Before running this file, create a folder named ***faces***

@@ -14,7 +14,7 @@
 
 1. Download or clone my project: https://github.com/KungBao82045/portfolio.git
 
-2. Navigate the folder to ***Python Projects > facial_recognition***
+2. Navigate the folder to `Python Projects` > `facial_recognition
 
 3. Just in case you have some missing modules. Install these libraries:
 

@@ -17,11 +17,9 @@
 2. Navigate the folder to ***Python Projects > facial_recognition***
 
 3. Just in case you have some missing modules. Install these libraries:
-<br>
+
 `pip3 install numpy`
-<br>
 `pip3 install face_recognition`
-<br>
 `pip3 install opencv-python`
       
 

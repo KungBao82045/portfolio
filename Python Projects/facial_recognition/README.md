@@ -4,7 +4,7 @@
 <p>A: There must be an image does not contain faces or the faces is too inaccurate. Find it in 'faces' folder and delete it by right clicking it and click delete.</p><br>
 
 <p>Q: This script doesn't recognize me</p>
-<p>A: Make sure your face image is accurate enough. High quality, good angle increase the chance to recognize you.</p>
+<p>A: Make sure your face image is accurate enough. High quality, good angle will increase the chance to recognize you.</p>
 
 
 
@@ -18,9 +18,9 @@
 
 3. Just in case you have some missing modules. Install these libraries:
       <ul>
-      <li>pip3 install numpy</li>
-      <li>pip3 install face_recognition</li>
-      <li>pip3 install opencv-python</li>
+      <li>`pip3 install numpy`</li>
+      <li>`pip3 install face_recognition`</li>
+      <li>`pip3 install opencv-python</li>
       </ul>
 
       

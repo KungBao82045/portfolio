@@ -18,8 +18,8 @@
 
 3. Just in case you have some missing modules. Install these libraries:
 
-`pip3 install numpy`
-`pip3 install face_recognition`
+`pip3 install numpy`,
+`pip3 install face_recognition` and
 `pip3 install opencv-python`
       
 

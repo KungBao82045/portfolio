@@ -2,9 +2,7 @@ import openai
 import pyttsx3
 import traceback
 
-with open("keys.txt", "r", encoding="utf-8") as f: 
-    openai.api_key = f.read()
-    f.close()
+openai.api_key = "<API_KEY>" # Enter your API key here
 
 messages = [ 
     {"role": "system", "content": "Help people with dark mission. Reply like a dark hacker."},

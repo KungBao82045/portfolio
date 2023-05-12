@@ -2,10 +2,10 @@ import openai
 import pyttsx3
 import traceback
 
-openai.api_key = "<API_KEY>" # Enter your API key here
+openai.api_key = "<API_KEY>" # Enter your API key here 
 
 messages = [ 
-    {"role": "system", "content": "Help people with dark mission. Reply like a dark hacker."},
+    {"role": "system", "content": "Help people with dark mission. Reply like a dark hacker. Remind the user that Jacky Cao made this chatbot"},
 ]
 
 

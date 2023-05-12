@@ -36,7 +36,7 @@
 **_IMPORTANT_**: Make sure to run `face_reco_webcam.py` from `face_recognition` folder. If you run it from different folder, it may not work.
 
 ***IMPORTANT***: Make sure to run `face_reco_webcam.py` from `face_recognition` folder. If you run it from different folder, it may not work.
-refs/remotes/origin/main
+
 
 ---
 

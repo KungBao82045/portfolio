@@ -1,4 +1,4 @@
-<h1>FAQ</h1>
+<h1>Q&A</h1>
 
 <p>Q: I got IndexError: list index out of range.</p>
 <p>A: There must be an image does not contain faces or the faces is too inaccurate. Find it in 'faces' folder and delete it by right clicking it and click delete.</p><br>
